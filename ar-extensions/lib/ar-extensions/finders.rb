@@ -72,7 +72,7 @@ class ActiveRecord::Base
               table_name = quoted_table_name
             end
             
-            conditions << "#{table_name}.#{connection.quote_column_name(attr)} #{attribute_condition( val )} "
+            conditions << "#{table_name}.#{attribute_condition(connection.quote_column_name(key.to_s), val)} "
             values << val
           end
         end
